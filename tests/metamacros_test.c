@@ -27,6 +27,9 @@
 #define test_recursive_foreach(INDEX, VALUE) \
     metamacro_foreach_cxt_recursive(test_stringify_cxt,, "foo", (INDEX, VALUE))
 
+#define simple_concat(INDEX, STR) \
+    STR
+
 void metamacros_test (void) {
     assert(metamacro_at(0, -15) == -15);
     assert(metamacro_at(20, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -15) == -15);
@@ -112,4 +115,9 @@ void metamacros_test (void) {
     assert(0 == strcmp(metamacro_if_eq(0, 0)("A")(metamacro_if_eq_recursive(1, 1)("B")("C")), "A"));
     assert(0 == strcmp(metamacro_if_eq(0, 1)("A")(metamacro_if_eq_recursive(1, 1)("B")("C")), "B"));
     assert(0 == strcmp(metamacro_if_eq(0, 1)("A")(metamacro_if_eq_recursive(0, 1)("B")("C")), "C"));
+
+    assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_take(1, "foo", "bar", "buzz")), "foo"));
+    assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_take(3, "foo", "bar", "buzz")), "foobarbuzz"));
+    assert(0 == strcmp(metamacro_foreach(test_stringify,, metamacro_take(20, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)),
+        "001122334455667788991010111112121313141415151616171718181919"));
 }
