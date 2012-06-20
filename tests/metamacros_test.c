@@ -28,6 +28,9 @@
     metamacro_foreach_cxt_recursive(test_stringify_cxt,, "foo", (INDEX, VALUE))
 
 void metamacros_test (void) {
+    assert(metamacro_at(0, -15) == -15);
+    assert(metamacro_at(20, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -15) == -15);
+
     assert(metamacro_argcount(x) == 1);
     assert(metamacro_argcount(x, x) == 2);
     assert(metamacro_argcount(x, x, x) == 3);

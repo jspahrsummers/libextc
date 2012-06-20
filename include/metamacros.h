@@ -38,13 +38,21 @@
         metamacro_concat_(A, B)
 
 /**
+ * Returns the Nth variadic argument (starting from zero). At least
+ * N + 1 variadic arguments must be given. N must be between zero and twenty,
+ * inclusive.
+ */
+#define metamacro_at(N, ...) \
+        metamacro_concat(metamacro_at, N)(__VA_ARGS__)
+
+/**
  * Returns the number of arguments (up to twenty) provided to the macro. At
  * least one argument must be provided.
  *
  * Inspired by P99: http://p99.gforge.inria.fr
  */
 #define metamacro_argcount(...) \
-        metamacro_index20_(__VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+        metamacro_at(20, __VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
 
 /**
  * Identical to #metamacro_foreach_cxt, except that no CONTEXT argument is
@@ -165,7 +173,6 @@ metamacro_if_eq(0, 1)(true)(false)
 // Do not write code that depends on anything below this line.
 #define metamacro_stringify_(VALUE) # VALUE
 #define metamacro_concat_(A, B) A ## B
-#define metamacro_index20_(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, ...) _20
 #define metamacro_foreach_iter(INDEX, MACRO, ARG) MACRO(INDEX, ARG)
 #define metamacro_head_(FIRST, ...) FIRST
 #define metamacro_tail_(FIRST, ...) __VA_ARGS__
@@ -176,7 +183,30 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_foreach_concat_iter(INDEX, BASE, ARG) metamacro_foreach_concat_iter_(BASE, ARG)
 #define metamacro_foreach_concat_iter_(BASE, ARG) BASE ## ARG
 
-// foreach_cxt expansions
+// metamacro_at expansions
+#define metamacro_at0(...) metamacro_head(__VA_ARGS__)
+#define metamacro_at1(_0, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at2(_0, _1, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at3(_0, _1, _2, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at4(_0, _1, _2, _3, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at5(_0, _1, _2, _3, _4, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at6(_0, _1, _2, _3, _4, _5, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at7(_0, _1, _2, _3, _4, _5, _6, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at8(_0, _1, _2, _3, _4, _5, _6, _7, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at9(_0, _1, _2, _3, _4, _5, _6, _7, _8, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at10(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at11(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at12(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at13(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at14(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at15(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at16(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at17(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at18(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at19(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at20(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, ...) metamacro_head(__VA_ARGS__)
+
+// metamacro_foreach_cxt expansions
 #define metamacro_foreach_cxt0(MACRO, SEP, CONTEXT)
 #define metamacro_foreach_cxt1(MACRO, SEP, CONTEXT, _0) MACRO(0, CONTEXT, _0)
 
@@ -275,7 +305,7 @@ metamacro_if_eq(0, 1)(true)(false)
     SEP \
     MACRO(19, CONTEXT, _19)
 
-// foreach_cxt_recursive expansions
+// metamacro_foreach_cxt_recursive expansions
 #define metamacro_foreach_cxt_recursive0(MACRO, SEP, CONTEXT)
 #define metamacro_foreach_cxt_recursive1(MACRO, SEP, CONTEXT, _0) MACRO(0, CONTEXT, _0)
 
@@ -374,7 +404,7 @@ metamacro_if_eq(0, 1)(true)(false)
     SEP \
     MACRO(19, CONTEXT, _19)
 
-// for_cxt expansions
+// metamacro_for_cxt expansions
 #define metamacro_for_cxt0(MACRO, SEP, CONTEXT)
 #define metamacro_for_cxt1(MACRO, SEP, CONTEXT) MACRO(0, CONTEXT)
 
