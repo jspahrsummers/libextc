@@ -131,6 +131,13 @@
         metamacro_concat(metamacro_take, N)(__VA_ARGS__)
 
 /**
+ * Removes the first N (up to twenty) variadic arguments from the given argument
+ * list. At least N variadic arguments must be provided.
+ */
+#define metamacro_drop(N, ...) \
+        metamacro_concat(metamacro_drop, N)(__VA_ARGS__)
+
+/**
  * Decrements VAL, which must be a number between one and twenty, inclusive.
  *
  * This is primarily useful when dealing with indexes and counts in
@@ -670,5 +677,28 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_take18(...) metamacro_head(__VA_ARGS__), metamacro_take17(metamacro_tail(__VA_ARGS__))
 #define metamacro_take19(...) metamacro_head(__VA_ARGS__), metamacro_take18(metamacro_tail(__VA_ARGS__))
 #define metamacro_take20(...) metamacro_head(__VA_ARGS__), metamacro_take19(metamacro_tail(__VA_ARGS__))
+
+// metamacro_drop expansions
+#define metamacro_drop0(...) __VA_ARGS__
+#define metamacro_drop1(...) metamacro_tail(__VA_ARGS__)
+#define metamacro_drop2(...) metamacro_drop1(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop3(...) metamacro_drop2(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop4(...) metamacro_drop3(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop5(...) metamacro_drop4(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop6(...) metamacro_drop5(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop7(...) metamacro_drop6(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop8(...) metamacro_drop7(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop9(...) metamacro_drop8(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop10(...) metamacro_drop9(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop11(...) metamacro_drop10(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop12(...) metamacro_drop11(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop13(...) metamacro_drop12(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop14(...) metamacro_drop13(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop15(...) metamacro_drop14(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop16(...) metamacro_drop15(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop17(...) metamacro_drop16(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop18(...) metamacro_drop17(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop19(...) metamacro_drop18(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop20(...) metamacro_drop19(metamacro_tail(__VA_ARGS__))
 
 #endif

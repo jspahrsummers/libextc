@@ -120,4 +120,8 @@ void metamacros_test (void) {
     assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_take(3, "foo", "bar", "buzz")), "foobarbuzz"));
     assert(0 == strcmp(metamacro_foreach(test_stringify,, metamacro_take(20, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)),
         "001122334455667788991010111112121313141415151616171718181919"));
+
+    assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_drop(1, "foo", "bar", "buzz")), "barbuzz"));
+    assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_drop(2, "foo", "bar", "buzz")), "buzz"));
+    assert(metamacro_drop(20, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19) 20 == 20);
 }
