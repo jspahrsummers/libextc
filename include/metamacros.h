@@ -2,10 +2,6 @@
  * Macros for metaprogramming
  * ExtendedC
  *
- * Unless otherwise specified for a given block macro, statements can appear
- * immediately after such macros and work as expected. Braces are optional for
- * single statements, just like built-in constructs.
- *
  * by Justin Spahr-Summers
  *
  * Released 9. Nov 2010 into the public domain.
