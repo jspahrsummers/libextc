@@ -133,4 +133,7 @@ void metamacros_test (void) {
     assert(!metamacro_is_even(3));
     assert(!metamacro_is_even(19));
     assert(metamacro_is_even(20));
+
+    assert(metamacro_not(0) == 1);
+    assert(metamacro_not(1) == 0);
 }
