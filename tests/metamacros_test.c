@@ -91,10 +91,12 @@ void metamacros_test (void) {
     assert(metamacro_inc(5) == 6);
     assert(metamacro_inc(0) == 1);
     assert(metamacro_inc(19) == 20);
+    assert(metamacro_inc(20) == 21);
     assert(metamacro_inc(metamacro_inc(5)) == 7);
 
     assert(metamacro_dec(5) == 4);
     assert(metamacro_dec(1) == 0);
+    assert(metamacro_dec(0) == -1);
     assert(metamacro_dec(20) == 19);
     assert(metamacro_dec(metamacro_dec(5)) == 3);
 

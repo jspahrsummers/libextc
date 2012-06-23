@@ -134,22 +134,22 @@
         metamacro_concat(metamacro_drop, N)(__VA_ARGS__)
 
 /**
- * Decrements VAL, which must be a number between one and twenty, inclusive.
+ * Decrements VAL, which must be a number between zero and twenty, inclusive.
  *
  * This is primarily useful when dealing with indexes and counts in
  * metaprogramming.
  */
 #define metamacro_dec(VAL) \
-        metamacro_concat(metamacro_dec, VAL)
+        metamacro_at(VAL, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
 
 /**
- * Increments VAL, which must be a number between zero and nineteen, inclusive.
+ * Increments VAL, which must be a number between zero and twenty, inclusive.
  *
  * This is primarily useful when dealing with indexes and counts in
  * metaprogramming.
  */
 #define metamacro_inc(VAL) \
-        metamacro_concat(metamacro_inc, VAL)
+        metamacro_at(VAL, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)
 
 /**
  * If A is equal to B, the next argument list is expanded; otherwise, the
@@ -521,50 +521,6 @@ metamacro_if_eq(0, 1)(true)(false)
     metamacro_for_cxt19(MACRO, SEP, CONTEXT) \
     SEP \
     MACRO(19, CONTEXT)
-
-// metamacro_dec expansions
-#define metamacro_dec1 0
-#define metamacro_dec2 1
-#define metamacro_dec3 2
-#define metamacro_dec4 3
-#define metamacro_dec5 4
-#define metamacro_dec6 5
-#define metamacro_dec7 6
-#define metamacro_dec8 7
-#define metamacro_dec9 8
-#define metamacro_dec10 9
-#define metamacro_dec11 10
-#define metamacro_dec12 11
-#define metamacro_dec13 12
-#define metamacro_dec14 13
-#define metamacro_dec15 14
-#define metamacro_dec16 15
-#define metamacro_dec17 16
-#define metamacro_dec18 17
-#define metamacro_dec19 18
-#define metamacro_dec20 19
-
-// metamacro_inc expansions
-#define metamacro_inc0 1
-#define metamacro_inc1 2
-#define metamacro_inc2 3
-#define metamacro_inc3 4
-#define metamacro_inc4 5
-#define metamacro_inc5 6
-#define metamacro_inc6 7
-#define metamacro_inc7 8
-#define metamacro_inc8 9
-#define metamacro_inc9 10
-#define metamacro_inc10 11
-#define metamacro_inc11 12
-#define metamacro_inc12 13
-#define metamacro_inc13 14
-#define metamacro_inc14 15
-#define metamacro_inc15 16
-#define metamacro_inc16 17
-#define metamacro_inc17 18
-#define metamacro_inc18 19
-#define metamacro_inc19 20
 
 // metamacro_if_eq expansions
 #define metamacro_if_eq0(VALUE) \
