@@ -124,4 +124,11 @@ void metamacros_test (void) {
     assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_drop(1, "foo", "bar", "buzz")), "barbuzz"));
     assert(0 == strcmp(metamacro_foreach(simple_concat,, metamacro_drop(2, "foo", "bar", "buzz")), "buzz"));
     assert(metamacro_drop(20, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19) 20 == 20);
+
+    assert(!metamacro_is_even(0));
+    assert(!metamacro_is_even(1));
+    assert(metamacro_is_even(2));
+    assert(!metamacro_is_even(3));
+    assert(!metamacro_is_even(19));
+    assert(metamacro_is_even(20));
 }

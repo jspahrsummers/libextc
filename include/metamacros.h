@@ -179,6 +179,15 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq_recursive(A, B) \
         metamacro_concat(metamacro_if_eq_recursive, A)(B)
 
+/**
+ * Returns 1 if N is an even number, or 0 otherwise. N must be between zero and
+ * twenty, inclusive.
+ *
+ * For the purposes of this test, zero is not considered even.
+ */
+#define metamacro_is_even(N) \
+        metamacro_at(N, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1)
+
 // IMPLEMENTATION DETAILS FOLLOW!
 // Do not write code that depends on anything below this line.
 #define metamacro_stringify_(VALUE) # VALUE
