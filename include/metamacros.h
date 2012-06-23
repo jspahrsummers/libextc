@@ -183,10 +183,10 @@ metamacro_if_eq(0, 1)(true)(false)
  * Returns 1 if N is an even number, or 0 otherwise. N must be between zero and
  * twenty, inclusive.
  *
- * For the purposes of this test, zero is not considered even.
+ * For the purposes of this test, zero is considered even.
  */
 #define metamacro_is_even(N) \
-        metamacro_at(N, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1)
+        metamacro_at(N, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1)
 
 /**
  * Returns the logical NOT of B, which must be the number zero or one.
