@@ -110,6 +110,8 @@ void metamacros_test (void) {
     assert(metamacro_if_eq(0, 20)(true)(false) == false);
     assert(metamacro_if_eq(19, 20)(true)(false) == false);
     assert(metamacro_if_eq(20, 20)(true)(false) == true);
+    assert(metamacro_head(metamacro_if_eq(15, 15)(true, true)(false, false)) == true);
+    assert(metamacro_head(metamacro_if_eq(5, 15)(true, true)(false, false)) == false);
 
     assert(0 == strcmp(metamacro_if_eq(0, 0)(metamacro_if_eq_recursive(0, 1)("A")("B"))("C"), "B"));
     assert(0 == strcmp(metamacro_if_eq(0, 0)(metamacro_if_eq_recursive(1, 1)("A")("B"))("C"), "A"));

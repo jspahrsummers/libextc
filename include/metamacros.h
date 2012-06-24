@@ -532,27 +532,27 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq0(VALUE) \
     metamacro_concat(metamacro_if_eq0_, VALUE)
 
-#define metamacro_if_eq0_0(TRUE) TRUE metamacro_consume_
-#define metamacro_if_eq0_1(TRUE) metamacro_expand_
-#define metamacro_if_eq0_2(TRUE) metamacro_expand_
-#define metamacro_if_eq0_3(TRUE) metamacro_expand_
-#define metamacro_if_eq0_4(TRUE) metamacro_expand_
-#define metamacro_if_eq0_5(TRUE) metamacro_expand_
-#define metamacro_if_eq0_6(TRUE) metamacro_expand_
-#define metamacro_if_eq0_7(TRUE) metamacro_expand_
-#define metamacro_if_eq0_8(TRUE) metamacro_expand_
-#define metamacro_if_eq0_9(TRUE) metamacro_expand_
-#define metamacro_if_eq0_10(TRUE) metamacro_expand_
-#define metamacro_if_eq0_11(TRUE) metamacro_expand_
-#define metamacro_if_eq0_12(TRUE) metamacro_expand_
-#define metamacro_if_eq0_13(TRUE) metamacro_expand_
-#define metamacro_if_eq0_14(TRUE) metamacro_expand_
-#define metamacro_if_eq0_15(TRUE) metamacro_expand_
-#define metamacro_if_eq0_16(TRUE) metamacro_expand_
-#define metamacro_if_eq0_17(TRUE) metamacro_expand_
-#define metamacro_if_eq0_18(TRUE) metamacro_expand_
-#define metamacro_if_eq0_19(TRUE) metamacro_expand_
-#define metamacro_if_eq0_20(TRUE) metamacro_expand_
+#define metamacro_if_eq0_0(...) __VA_ARGS__ metamacro_consume_
+#define metamacro_if_eq0_1(...) metamacro_expand_
+#define metamacro_if_eq0_2(...) metamacro_expand_
+#define metamacro_if_eq0_3(...) metamacro_expand_
+#define metamacro_if_eq0_4(...) metamacro_expand_
+#define metamacro_if_eq0_5(...) metamacro_expand_
+#define metamacro_if_eq0_6(...) metamacro_expand_
+#define metamacro_if_eq0_7(...) metamacro_expand_
+#define metamacro_if_eq0_8(...) metamacro_expand_
+#define metamacro_if_eq0_9(...) metamacro_expand_
+#define metamacro_if_eq0_10(...) metamacro_expand_
+#define metamacro_if_eq0_11(...) metamacro_expand_
+#define metamacro_if_eq0_12(...) metamacro_expand_
+#define metamacro_if_eq0_13(...) metamacro_expand_
+#define metamacro_if_eq0_14(...) metamacro_expand_
+#define metamacro_if_eq0_15(...) metamacro_expand_
+#define metamacro_if_eq0_16(...) metamacro_expand_
+#define metamacro_if_eq0_17(...) metamacro_expand_
+#define metamacro_if_eq0_18(...) metamacro_expand_
+#define metamacro_if_eq0_19(...) metamacro_expand_
+#define metamacro_if_eq0_20(...) metamacro_expand_
 
 #define metamacro_if_eq1(VALUE) metamacro_if_eq0(metamacro_dec(VALUE))
 #define metamacro_if_eq2(VALUE) metamacro_if_eq1(metamacro_dec(VALUE))
@@ -579,27 +579,27 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq_recursive0(VALUE) \
     metamacro_concat(metamacro_if_eq_recursive0_, VALUE)
 
-#define metamacro_if_eq_recursive0_0(TRUE) TRUE metamacro_consume_
-#define metamacro_if_eq_recursive0_1(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_2(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_3(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_4(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_5(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_6(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_7(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_8(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_9(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_10(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_11(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_12(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_13(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_14(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_15(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_16(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_17(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_18(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_19(TRUE) metamacro_expand_
-#define metamacro_if_eq_recursive0_20(TRUE) metamacro_expand_
+#define metamacro_if_eq_recursive0_0(...) __VA_ARGS__ metamacro_consume_
+#define metamacro_if_eq_recursive0_1(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_2(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_3(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_4(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_5(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_6(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_7(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_8(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_9(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_10(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_11(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_12(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_13(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_14(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_15(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_16(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_17(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_18(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_19(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_20(...) metamacro_expand_
 
 #define metamacro_if_eq_recursive1(VALUE) metamacro_if_eq_recursive0(metamacro_dec(VALUE))
 #define metamacro_if_eq_recursive2(VALUE) metamacro_if_eq_recursive1(metamacro_dec(VALUE))
