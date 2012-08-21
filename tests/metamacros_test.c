@@ -2,9 +2,8 @@
  * libextc metamacros testcase
  * ExtendedC
  *
- * by Justin Spahr-Summers
- *
- * Released 18. Jun 2012 into the public domain.
+ * Copyright (C) 2012 Justin Spahr-Summers
+ * Released under the MIT license
  */
 
 #include "metamacros.h"

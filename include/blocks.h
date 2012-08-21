@@ -6,9 +6,8 @@
  * immediately after these macros and work as expected. Braces are optional for
  * single statements, just like built-in constructs.
  *
- * by Justin Spahr-Summers
- *
- * Released 9. Nov 2010 into the public domain.
+ * Copyright (C) 2012 Justin Spahr-Summers
+ * Released under the MIT license
  */
 
 #ifndef EXTC_BLOCKS_H

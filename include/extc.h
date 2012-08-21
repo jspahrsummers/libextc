@@ -8,7 +8,8 @@
  *
  * by Justin Spahr-Summers
  *
- * Released 9. Nov 2010 into the public domain.
+ * Copyright (C) 2012 Justin Spahr-Summers
+ * Released under the MIT license
  */
 
 #ifndef EXTC_EXTC_H
